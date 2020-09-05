@@ -1,0 +1,75 @@
+h1, h2 {
+  line-height: 1.6;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+body {
+  background-color: #fedfef;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 660px;
+}
+
+.m-flex{
+  display: flex;
+}
+p,h1,h2,h3,h4,h5,h6,ul,li {
+  margin: 0;
+  list-style: none;
+}
+
+
+.mint-navbar {
+  margin-bottom: 3px;
+  .mint-tab-item {
+      padding: 13px 0;
+  }
+}
+
+.mint-tabbar{
+  background: #fff;
+}
+
+.mint-tabbar > .mint-tab-item.is-selected {
+  background-color: #fff
+}
+
+// 图片 简介组件 列表子选项
+.class-item {
+  padding: 5px 0;
+  align-items: center;
+  height: 150px;
+  border-bottom: 1px solid rgb(192 192 192 / 0.5);
+  &:last-child{
+      border-bottom: 0;
+  }
+  .right-img {
+      width: 105px;
+      height: 100%;
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 3px;
+  }
+  .left-box {
+      flex: 1;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      p.right-spine span{
+          display: inline-block;
+          padding: 2px 10px;
+          border-radius: 15px;
+          margin-right: 5px;
+          background-color: cyan;
+          color: #2c3e50;
+      }
+      p.start-num span {
+          color: red;
+          margin: 0 2px;
+          font-weight: 500;
+      }
+  }
+}
