@@ -18,7 +18,7 @@
         <div class="list">
             <div class="m-flex class-item" v-for="(item,index) in classlList" :key="index">
                 <img class="right-img" :src="item.img" alt="" srcset="">
-                <div class="left-box m-flex">
+                <div class="left-box m-flex" @click="goRoute('classDetails', item.id)">
                     <p class="right-spine"><span v-for="i in item.tag" :key="i.id">{{i.name}}</span></p>
                     <h4>{{item.title}}</h4>
                     <p>发布时间：2020-08-19 12:30</p>
@@ -52,6 +52,14 @@ export default {
             }).then(res=>{
                 this.detail = res.result[0];
                 this.classlList = res.result;
+            })
+        },
+        goRoute(url,course_id){
+            this.$router.push({
+                path: '/' + url,
+                query: {
+                    course_id
+                }
             })
         },
     }
