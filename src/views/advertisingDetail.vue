@@ -5,7 +5,7 @@
             <h4 class="title">{{data.title}}</h4>
             <div v-for="item in data.mfile" :key="item.id">
                 <p>{{item.content}}</p>
-                <mt-button type="primary" size="small" ><a download="https://www.runoob.com/images/logo.png" href="https://www.runoob.com/images/logo.png">下载</a></mt-button>
+                <mt-button type="primary" size="small" ><a download="图片" :href="item.file">下载</a></mt-button>
             </div>
             <!-- <a href="/images/logo.png" download="/images/logo.png">
                 <img border="0" src="/images/logo.png" alt="runoob.com" >
@@ -17,14 +17,12 @@
 export default {
     data(){
         return {
-            data:{
-
-            }
+            data:{}
         }
     },
     created(){
         const {material_id} = this.$route.query
-        // if(material_id) this.init(material_id - 0)
+        if(material_id) this.init(material_id - 0)
     },
     methods:{
         init(material_id){
@@ -49,7 +47,6 @@ export default {
         width: 100%;
         object-fit: cover;
         border-radius: 10px;
-        border:1px solid red;
     }
     h4{
         text-align: center;

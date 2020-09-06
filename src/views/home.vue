@@ -21,8 +21,8 @@
                     当前数据为空
                 </div>
                 <div class="m-flex class-item" v-for="item in yingList" :key="item.id">
-                    <img class="right-img" src="item.img" alt="" srcset="">
-                    <div class="left-box m-flex" @click="goRoute('classDetails')">
+                    <img class="right-img" :src="item.img" alt="" srcset="">
+                    <div class="left-box m-flex" @click="goRoute('classDetails',item.id)">
                         <p class="right-spine">
                             <span v-for="i in item.tag" :key="i.id">{{i.name}}</span>
                         </p>
@@ -85,7 +85,7 @@ export default {
         }
     },
     mounted(){
-        this.init('Market');
+        this.init('yingList');
     },
     methods:{
         goRoute(url,course_id){
@@ -110,6 +110,7 @@ export default {
                 method: 'post',
                 data: {
                     page: 1,
+                    number:100,
                     type: this.selected // 非专业课
                 }
             }).then(res=>{

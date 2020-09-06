@@ -7,8 +7,8 @@
             </div>
             <div class="list">
                 <div class="item" v-for="item in list" :key="item.id">
-                    <a :href="item.url"><img :src="item.photo" alt="" srcset=""></a>
-                    <h4>{{item.title}}</h4>
+                   <img :src="item.photo" alt="" srcset="">
+                    <h4> <a :href="item.url">{{item.title}}</a></h4>
                     <p><span>2020-12-11</span><span>{{item.views}}人观看</span></p>
                 </div>
             </div>
@@ -142,6 +142,11 @@ export default {
             p{
                 display: flex;
                 justify-content: space-between;
+            }
+            h4 a {
+                text-decoration: none;
+                color: #000;
+                text-align: left;
             }
         }
     }
